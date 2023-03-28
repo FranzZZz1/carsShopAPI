@@ -1,0 +1,210 @@
+.fullscreen,
+.car__screen {
+  position: fixed;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  display: none;
+}
+
+.fullscreen *,
+.car__screen * {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.fullscreen .box,
+.car__screen .box {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  user-select: none;
+}
+
+.box form {
+  position: absolute;
+
+  border: 1px solid rgb(255, 122, 0);
+  border-radius: 8px;
+
+  padding: 50px 40px 20px;
+
+  backdrop-filter: blur(4px);
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.box form .form__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  height: 25px;
+  transition: 0.3s;
+}
+
+.box form .form__close:hover {
+  background-color: #181818;
+  border-radius: 8px;
+  height: 25px;
+}
+
+.box form .auth__title,
+.reg__title {
+  color: #ddd;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.box form .auth__box {
+  position: relative;
+  max-width: 300px;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.box form .auth__box input,
+.input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: #ddd;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.box form .auth__box span {
+  position: absolute;
+  left: 0;
+  padding: 13px 0px 10px;
+  pointer-events: none;
+  color: #8f8f8f;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  transition: 0.4s;
+  overflow: hidden;
+}
+
+.box form .auth__box input:valid ~ span,
+.box form .auth__box input:focus ~ span {
+  color: #fff;
+  font-size: 10px;
+  transform: translateY(-25px);
+}
+
+.box form .auth__box i,
+i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 2px;
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.box form .auth__box i::before,
+.form__group i::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 122, 0, 1) 0%,
+    rgba(255, 122, 0, 1) 50%,
+    rgba(221, 221, 221, 1) 50%,
+    rgba(221, 221, 221, 1) 100%
+  );
+  transition: left 0.4s;
+}
+
+.box form .auth__box input:valid ~ i::before,
+.box form .auth__box input:focus ~ i::before,
+.order__control:focus ~ i::before {
+  left: 0;
+}
+
+.box form .auth__complete {
+  text-align: center;
+}
+
+.box form .auth__complete .auth__link,
+.box form .auth__complete .reg__link {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+
+  color: #8f8f8f;
+
+  margin: 0;
+
+  transition: color 0.3s;
+  cursor: pointer;
+
+  display: inline;
+}
+
+.box form .auth__complete .auth__link:hover,
+.box form .auth__complete .reg__link:hover,
+.box form .auth__complete .auth__link:active,
+.box form .auth__complete .reg__link:active {
+  color: #ddd;
+}
+
+.box form .auth__complete .auth__btn,
+.box form .auth__complete .reg__btn {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 15px;
+
+  border: none;
+  border-radius: 4px;
+  background-color: #ff7a00;
+
+  outline: none;
+  padding: 9px 30px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.box form .auth__complete .auth__btn:hover,
+.box form .auth__complete .reg__btn:hover {
+  background-color: #c55f00;
+}
+
+.auth__error-message,
+.reg__error-message {
+  color: #d42d2d;
+  font-size: 12px;
+  margin: 7px 0 0;
+  line-height: 20px;
+  text-align: left;
+}
