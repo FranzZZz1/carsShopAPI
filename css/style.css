@@ -64,6 +64,10 @@ html {
   z-index: 20;
 }
 
+.main{
+	margin-top: 120px;
+}
+
 .header__container {
   height: 80px;
 
